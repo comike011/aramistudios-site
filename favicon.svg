@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -7 22 22" shape-rendering="crispEdges">
+  <style>
+    .w { fill: #ffffff; }
+    .k { fill: #16304d; }
+    @media (prefers-color-scheme: dark) {
+      .w { fill: #c9d5ee; }
+      .k { fill: #0b1630; }
+    }
+  </style>
+  <path class="w" d="M6 1h4v1h-4zM4 2h8v1h-8zM14 2h3v1h-3zM3 3h15v1h-15zM1 4h19v1h-19zM1 5h20v1h-20zM2 6h18v1h-18z"/>
+  <path class="k" d="M6 0h4v1h-4zM4 1h2v1h-2zM10 1h2v1h-2zM14 1h3v1h-3zM3 2h1v1h-1zM12 2h2v1h-2zM17 2h1v1h-1zM1 3h2v1h-2zM18 3h2v1h-2zM0 4h1v1h-1zM20 4h1v1h-1zM0 5h1v1h-1zM21 5h1v1h-1zM1 6h1v1h-1zM20 6h1v1h-1zM2 7h18v1h-18z"/>
+</svg>
