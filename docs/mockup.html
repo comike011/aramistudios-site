@@ -1,0 +1,156 @@
+<title>Arami Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500&family=Silkscreen&display=swap">
+<style>
+  /* Layout: one calm, left-aligned column under an open sky with slow-drifting pixel clouds. Morning sky in light, night sky in dark. */
+  :root {
+    --sky-top: #a9d2f3;
+    --sky-low: #f2f8fd;
+    --fg: #16304d;
+    --muted: #4d6782;
+    --accent: #e0752d;
+    --cloud: #ffffff;
+    --cloud-line: #16304d;
+    --star: transparent;
+    --drift: #ffffff;
+    --drift-line: #8fb9e0;
+    --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+    --body: "Figtree", system-ui, -apple-system, sans-serif;
+    --pixel: "Silkscreen", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sky-top: #0b1630; --sky-low: #1b2b4f; --fg: #e8eefb; --muted: #a8b7d4; --accent: #ffb86b;
+      --cloud: #c9d5ee; --cloud-line: #0b1630; --star: #e8eefb; --drift: #2c3f68; --drift-line: #0b1630; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sky-top: #0b1630; --sky-low: #1b2b4f; --fg: #e8eefb; --muted: #a8b7d4; --accent: #ffb86b;
+    --cloud: #c9d5ee; --cloud-line: #0b1630; --star: #e8eefb; --drift: #2c3f68; --drift-line: #0b1630; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body { background: var(--sky-low); background-image: linear-gradient(180deg, var(--sky-top) 0, var(--sky-low) 640px); color: var(--fg); font-family: var(--body); font-size: 18px; line-height: 1.65; position: relative; }
+  #sky { position: absolute; inset: 0 0 auto 0; height: 640px; width: 100%; pointer-events: none; }
+
+  .page { position: relative; max-width: 680px; margin: 0 auto; padding-block: 40px 56px; padding-inline: 20px; }
+  nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .mark { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; }
+  .mark canvas { width: 44px; height: 22px; image-rendering: pixelated; }
+  .tag { font-family: var(--pixel); font-size: .65rem; letter-spacing: .08em; color: var(--muted); }
+
+  .hero { padding-block: 120px 72px; }
+  h1 { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(2.3rem, 8vw, 3.9rem); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede { margin: 22px 0 0; font-size: 1.2rem; color: var(--muted); max-width: 34ch; }
+
+  .notes { display: grid; gap: 40px; }
+  .notes h2 { margin: 0 0 6px; font-family: var(--pixel); font-weight: 400; font-size: .75rem; letter-spacing: .1em; color: var(--accent); }
+  .notes p { margin: 0; max-width: 60ch; }
+  .notes p + p { margin-top: 10px; }
+  .email { font-family: var(--display); font-weight: 500; font-size: 1.35rem; user-select: all; word-break: break-all; }
+  footer { margin-top: 80px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, var(--fg) 18%, transparent); font-size: .85rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="page">
+  <nav>
+    <div class="mark"><canvas id="mark" width="22" height="11" aria-hidden="true"></canvas>Arami Studios</div>
+  </nav>
+
+  <header class="hero">
+    <h1>A little piece of <em>sky.</em></h1>
+    <p class="lede">A small studio making simple, friendly apps.</p>
+  </header>
+
+  <div class="notes">
+    <section>
+      <h2>THE NAME</h2>
+      <p>The name started as a family story. In Guaraní, a language spoken in Paraguay, <em>arami</em> means "little sky." It seemed like the right size for what we want to make.</p>
+    </section>
+    <section>
+      <h2>WHAT WE MAKE</h2>
+      <p>Apps that are easy to pick up and pleasant to use. Many borrow the pixel look of the old 8-bit consoles. Our first one is in the works.</p>
+    </section>
+    <section>
+      <h2>SAY HELLO</h2>
+      <p class="email">support@aramistudios.com</p>
+    </section>
+  </div>
+
+  <footer><span>© 2026 Arami Studios</span><span>aramistudios.com</span></footer>
+</div>
+
+<script>
+(() => {
+  const CLOUD = [
+    "......kkkk............",
+    "....kkwwwwkk..kkk.....",
+    "...kwwwwwwwwkkwwwk....",
+    ".kkwwwwwwwwwwwwwwwkk..",
+    "kwwwwwwwwwwwwwwwwwwwk.",
+    "kwwwwwwwwwwwwwwwwwwwwk",
+    ".kwwwwwwwwwwwwwwwwwwk.",
+    "..kkkkkkkkkkkkkkkkkk..",
+  ];
+  const tok = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  function drawMark() {
+    const c = document.getElementById("mark"), x = c.getContext("2d");
+    x.clearRect(0, 0, c.width, c.height);
+    const col = { k: tok("--cloud-line"), w: tok("--cloud") };
+    CLOUD.forEach((r, j) => [...r].forEach((ch, i) => { if (col[ch]) { x.fillStyle = col[ch]; x.fillRect(i, j + 1, 1, 1); } }));
+  }
+
+  const canvas = document.getElementById("sky"), ctx = canvas.getContext("2d");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W = 0, H = 0, S = 4, stars = [], clouds = [], col = {};
+
+  function layout() {
+    const dpr = window.devicePixelRatio || 1;
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    S = W < 560 ? 3 : 4;
+    let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const n = Math.round(W / 14);
+    stars = Array.from({ length: n }, (_, i) => ({
+      s: rnd() < 0.15 ? 3 : 2,
+      a: 0.35 + rnd() * 0.6 * (1 - i / n / 2),
+      x: Math.round(rnd() * W), y: Math.round(Math.pow(rnd(), 1.6) * H * 0.9),
+    }));
+    clouds = [
+      { f: 0.72, y: 24, v: 0.10 },
+      { f: 0.08, y: 96, v: 0.07 },
+      { f: 0.46, y: 300, v: 0.05 },
+      { f: 0.88, y: 420, v: 0.08 },
+    ].map(c => ({ x: c.f * W, y: c.y, v: c.v }));
+  }
+  function colors() {
+    col = { star: tok("--star"), w: tok("--drift"), k: tok("--drift-line") };
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    if (col.star && col.star !== "transparent") {
+      ctx.fillStyle = col.star;
+      for (const st of stars) { ctx.globalAlpha = st.a; ctx.fillRect(st.x, st.y, st.s, st.s); }
+      ctx.globalAlpha = 1;
+    }
+    const cw = CLOUD[0].length * S;
+    for (const c of clouds) {
+      CLOUD.forEach((r, j) => [...r].forEach((ch, i) => {
+        if (!col[ch]) return;
+        ctx.fillStyle = col[ch]; ctx.fillRect(Math.round(c.x + i * S), Math.round(c.y + j * S), S, S);
+      }));
+      if (!still) { c.x += c.v; if (c.x > W + 10) c.x = -cw - 10; }
+    }
+    if (!still) requestAnimationFrame(frame);
+  }
+
+  const retheme = () => { drawMark(); colors(); if (still) frame(); };
+  drawMark(); colors(); layout(); frame();
+  addEventListener("resize", () => { layout(); if (still) frame(); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
+</script>
