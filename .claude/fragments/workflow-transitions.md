@@ -255,6 +255,9 @@ there is one line of output, not a stop.
   `.github/workflows/` holds a Claude review workflow. `pr_findings.sh` reports each
   bot as `reported`, `absent` or `errored`. A repo with no reviewer installed has an
   empty roster, and `absent` there is the correct permanent answer.
+- **No App Factory repo has a reviewer installed at this time.** The roster is therefore
+  empty everywhere: `absent` is terminal, the session posts no `@codex review` and waits
+  no ~6 minutes. Install a reviewer on a repo, then delete this bullet.
 - **Watch CI to completion:** `gh pr checks <pr> --watch`. Fix a failing check at most
   **3 times**, then write `needs input:`. A repo with no checks returns instantly, and
   that counts as green, not reviewed.
@@ -262,8 +265,9 @@ there is one line of output, not a stop.
   `~/Sites/app-factory/factory/scripts/pr_findings.sh <pr>`. Never hand-roll `gh`
   queries: the API has three traps (comments re-anchor to head, an empty bot review
   looks like a clean pass, and `gh --jq` ignores `--arg`). If the script fails, write
-  `needs input:`. Allow up to **~6 minutes** for a first report. An absent Codex gets one
-  `@codex review` and one more wait, then is noted as absent and the session proceeds.
+  `needs input:`. Allow up to **~6 minutes** for a first report *when a reviewer is in the
+  roster*; with an empty roster, read once and proceed. A rostered Codex that has not
+  appeared gets one `@codex review` and one more wait, then is noted as absent.
 - **Tier every finding where `answered_by_me` is false.** A finding is a **nit** if and
   only if acting on it would change **none** of: runtime behavior, a contract, persisted
   data, or a test outcome. Everything else is **blocking**. For an iOS app, blocking
@@ -280,7 +284,8 @@ there is one line of output, not a stop.
   captures the round boundary in the same command:
   `ROUND=$(date -u +%Y-%m-%dT%H:%M:%SZ) && gh pr comment <pr> --body '@codex review' && echo "boundary: $ROUND"`.
   Every later `pr_findings.sh` call in that round passes `--since "$ROUND"`. Judge Codex
-  on `codex.status` and the Claude action on `claude.status_at_head`.
+  on `codex.status` and the Claude action on `claude.status_at_head`. With an empty roster
+  no finding ever exists, so this never fires.
 - **At two blocking rounds, report and ask whether to continue.** The cap is a
   reporting point, not a stop.
 - **A clean pass is terminal. Never reply to one.** An errored review is not a clean
