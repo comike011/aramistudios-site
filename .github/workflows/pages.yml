@@ -21,8 +21,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - run: npx --yes html-validate@9 "*.html"
-      - run: npx --yes prettier@3 --check "*.html"
+      - run: npx --yes html-validate@9 "*.html" "privacy/*.html"
+      - run: npx --yes prettier@3 --check "*.html" "privacy/*.html"
 
   build:
     if: github.event_name != 'pull_request'
@@ -34,6 +34,8 @@ jobs:
         run: |
           mkdir _site
           cp index.html favicon.svg apple-touch-icon.png og-image.png _site/
+          mkdir _site/privacy
+          cp privacy/index.html _site/privacy/
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site

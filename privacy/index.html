@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Arami Studios</title>
+    <title>Privacy Policy · Arami Studios</title>
     <meta
       name="description"
-      content="Arami Studios is a small studio making simple, friendly apps."
+      content="The privacy policy for Arami Studios apps: no personal data, no ads, no analytics, no tracking."
     />
-    <link rel="canonical" href="https://aramistudios.com/" />
+    <link rel="canonical" href="https://aramistudios.com/privacy/" />
     <meta name="color-scheme" content="light dark" />
     <meta
       name="theme-color"
@@ -20,16 +20,16 @@
       content="#0b1630"
       media="(prefers-color-scheme: dark)"
     />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Arami Studios" />
-    <meta property="og:title" content="Arami Studios" />
+    <meta property="og:title" content="Privacy Policy · Arami Studios" />
     <meta
       property="og:description"
-      content="A small studio making simple, friendly apps."
+      content="One policy for every Arami Studios app: no personal data is collected."
     />
-    <meta property="og:url" content="https://aramistudios.com/" />
+    <meta property="og:url" content="https://aramistudios.com/privacy/" />
     <meta property="og:image" content="https://aramistudios.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -45,7 +45,7 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500&family=Silkscreen&display=swap"
     />
     <style>
-      /* Layout: one calm, left-aligned column under an open sky with slow-drifting pixel clouds. Morning sky in light, night sky in dark. */
+      /* The homepage's sky and type, held still: a reading page under the same quiet gradient. */
       :root {
         --sky-top: #a9d2f3;
         --sky-low: #f2f8fd;
@@ -96,13 +96,6 @@
         line-height: 1.65;
         position: relative;
       }
-      #sky {
-        position: absolute;
-        inset: 0 0 auto 0;
-        height: 640px;
-        width: 100%;
-        pointer-events: none;
-      }
 
       .page {
         position: relative;
@@ -126,6 +119,8 @@
         font-weight: 700;
         font-size: 1.1rem;
         letter-spacing: -0.01em;
+        color: inherit;
+        text-decoration: none;
       }
       .mark svg {
         width: 44px;
@@ -138,28 +133,22 @@
       .mark .w {
         fill: var(--cloud);
       }
-      .tag {
-        font-family: var(--pixel);
-        font-size: 0.65rem;
-        letter-spacing: 0.08em;
-        color: var(--muted);
+      .mark:focus-visible {
+        text-decoration: underline;
+        text-underline-offset: 6px;
       }
 
       .hero {
-        padding-block: 120px 72px;
+        padding-block: 96px 56px;
       }
       h1 {
         margin: 0;
         font-family: var(--display);
         font-weight: 500;
-        font-size: clamp(2.3rem, 8vw, 3.9rem);
-        line-height: 1.02;
-        letter-spacing: -0.035em;
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
         text-wrap: balance;
-      }
-      h1 em {
-        font-style: normal;
-        color: var(--accent);
       }
       .lede {
         margin: 22px 0 0;
@@ -186,6 +175,16 @@
       }
       .notes p + p {
         margin-top: 10px;
+      }
+      .notes a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, var(--fg) 40%, transparent);
+        text-underline-offset: 3px;
+      }
+      .notes a:hover,
+      .notes a:focus-visible {
+        text-decoration-color: currentColor;
       }
       .email {
         font-family: var(--display);
@@ -223,12 +222,10 @@
     </style>
   </head>
   <body>
-    <canvas id="sky" aria-hidden="true"></canvas>
     <div class="page">
       <nav>
-        <div class="mark">
+        <a class="mark" href="/">
           <svg
-            id="mark"
             viewBox="0 0 22 11"
             width="44"
             height="22"
@@ -243,35 +240,76 @@
               class="k"
               d="M6 1h4v1h-4zM4 2h2v1h-2zM10 2h2v1h-2zM14 2h3v1h-3zM3 3h1v1h-1zM12 3h2v1h-2zM17 3h1v1h-1zM1 4h2v1h-2zM18 4h2v1h-2zM0 5h1v1h-1zM20 5h1v1h-1zM0 6h1v1h-1zM21 6h1v1h-1zM1 7h1v1h-1zM20 7h1v1h-1zM2 8h18v1h-18z"
             /></svg
-          >Arami Studios
-        </div>
+          >Arami Studios</a
+        >
       </nav>
 
       <main>
         <header class="hero">
-          <h1>A little piece of <em>sky.</em></h1>
-          <p class="lede">A small studio making simple, friendly apps.</p>
+          <h1>Privacy Policy</h1>
+          <p class="lede">One policy for every Arami Studios app.</p>
         </header>
 
         <div class="notes">
           <section>
-            <h2>THE NAME</h2>
+            <h2>THE SHORT VERSION</h2>
             <p>
-              The name started as a family story. In Guaraní, a language spoken
-              in Paraguay, <em>arami</em> means "little sky." It seemed like the
-              right size for what we want to make.
+              Our apps don't collect any personal data. No ads, no accounts, no
+              analytics, no tracking, and no third-party SDKs.
             </p>
           </section>
           <section>
-            <h2>WHAT WE MAKE</h2>
+            <h2>WHAT WE COLLECT</h2>
             <p>
-              Apps that are easy to pick up and pleasant to use. Many borrow the
-              pixel look of the old 8-bit consoles. Our first one is in the
-              works.
+              Nothing. Your settings and progress are stored only on your
+              device, and we never see them.
             </p>
           </section>
           <section>
-            <h2>SAY HELLO</h2>
+            <h2>PURCHASES</h2>
+            <p>
+              In-app purchases are handled by Apple through StoreKit. We never
+              see your payment details; Apple tells the app only whether a
+              purchase is active. See
+              <a href="https://www.apple.com/legal/privacy/"
+                >Apple's privacy policy</a
+              >.
+            </p>
+          </section>
+          <section>
+            <h2>GAME CENTER</h2>
+            <p>
+              Where an app uses Game Center for leaderboards or achievements,
+              that service is run by Apple under
+              <a href="https://www.apple.com/legal/privacy/"
+                >Apple's own privacy policy</a
+              >. You can sign out of Game Center in Settings.
+            </p>
+          </section>
+          <section>
+            <h2>WHAT APPLE MAY SHARE WITH US</h2>
+            <p>
+              If you choose to share analytics with app developers in your
+              device's settings, Apple may send us anonymized crash reports and
+              aggregate statistics, such as download counts. They don't identify
+              you, and we use them only to fix bugs and understand how the apps
+              are doing.
+            </p>
+          </section>
+          <section>
+            <h2>IF YOU EMAIL US</h2>
+            <p>We use your address only to reply, and we don't share it.</p>
+          </section>
+          <section>
+            <h2>CHANGES</h2>
+            <p>
+              If an app ever needs to collect anything, this page will be
+              updated to say so before that app ships.
+            </p>
+            <p>Last updated: October 2026.</p>
+          </section>
+          <section>
+            <h2>QUESTIONS</h2>
             <p class="email">
               <a href="mailto:support@aramistudios.com"
                 >support@aramistudios.com</a
@@ -283,138 +321,11 @@
 
       <footer>
         <span>© 2026 Arami Studios</span
-        ><span><a href="privacy/">Privacy</a> · aramistudios.com</span>
+        ><span
+          ><a href="/privacy/" aria-current="page">Privacy</a> ·
+          aramistudios.com</span
+        >
       </footer>
     </div>
-
-    <script>
-      (() => {
-        const CLOUD = [
-          "......kkkk............",
-          "....kkwwwwkk..kkk.....",
-          "...kwwwwwwwwkkwwwk....",
-          ".kkwwwwwwwwwwwwwwwkk..",
-          "kwwwwwwwwwwwwwwwwwwwk.",
-          "kwwwwwwwwwwwwwwwwwwwwk",
-          ".kwwwwwwwwwwwwwwwwwwk.",
-          "..kkkkkkkkkkkkkkkkkk..",
-        ];
-        const tok = (n) =>
-          getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-
-        const canvas = document.getElementById("sky"),
-          ctx = canvas.getContext("2d");
-        const motion = matchMedia("(prefers-reduced-motion: reduce)");
-        let still = motion.matches,
-          running = false;
-        let W = 0,
-          H = 0,
-          S = 4,
-          stars = [],
-          clouds = [],
-          col = {};
-
-        function layout() {
-          const dpr = window.devicePixelRatio || 1;
-          W = canvas.clientWidth;
-          H = canvas.clientHeight;
-          canvas.width = W * dpr;
-          canvas.height = H * dpr;
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          S = W < 560 ? 3 : 4;
-          let seed = 7;
-          const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-          const n = Math.round(W / 14);
-          stars = Array.from({ length: n }, (_, i) => ({
-            s: rnd() < 0.15 ? 3 : 2,
-            a: 0.35 + rnd() * 0.6 * (1 - i / n / 2),
-            x: Math.round(rnd() * W),
-            y: Math.round(Math.pow(rnd(), 1.6) * H * 0.9),
-          }));
-          clouds = [
-            { f: 0.72, y: 24, v: 0.1 },
-            { f: 0.08, y: 96, v: 0.07 },
-            { f: 0.46, y: 300, v: 0.05 },
-            { f: 0.88, y: 420, v: 0.08 },
-          ].map((c) => ({ x: c.f * W, y: c.y, v: c.v }));
-        }
-        function colors() {
-          col = {
-            star: tok("--star"),
-            w: tok("--drift"),
-            k: tok("--drift-line"),
-          };
-        }
-        function draw(move) {
-          ctx.clearRect(0, 0, W, H);
-          if (col.star && col.star !== "transparent") {
-            ctx.fillStyle = col.star;
-            for (const st of stars) {
-              ctx.globalAlpha = st.a;
-              ctx.fillRect(st.x, st.y, st.s, st.s);
-            }
-            ctx.globalAlpha = 1;
-          }
-          const cw = CLOUD[0].length * S;
-          for (const c of clouds) {
-            CLOUD.forEach((r, j) =>
-              [...r].forEach((ch, i) => {
-                if (!col[ch]) return;
-                ctx.fillStyle = col[ch];
-                ctx.fillRect(
-                  Math.round(c.x + i * S),
-                  Math.round(c.y + j * S),
-                  S,
-                  S,
-                );
-              }),
-            );
-            if (move) {
-              c.x += c.v;
-              if (c.x > W + 10) c.x = -cw - 10;
-            }
-          }
-        }
-        // One loop at most: tick stops itself when motion is reduced, and start()
-        // only launches a loop when none is running.
-        function tick() {
-          if (still) {
-            running = false;
-            return;
-          }
-          draw(true);
-          requestAnimationFrame(tick);
-        }
-        function start() {
-          if (running || still) return;
-          running = true;
-          requestAnimationFrame(tick);
-        }
-
-        colors();
-        layout();
-        if (still) draw(false);
-        else start();
-
-        // iOS fires resize when the address bar shows or hides; only a width change re-lays out.
-        addEventListener("resize", () => {
-          if (canvas.clientWidth === W) return;
-          layout();
-          if (still) draw(false);
-        });
-        matchMedia("(prefers-color-scheme: dark)").addEventListener(
-          "change",
-          () => {
-            colors();
-            if (still) draw(false);
-          },
-        );
-        motion.addEventListener("change", (e) => {
-          still = e.matches;
-          if (still) draw(false);
-          else start();
-        });
-      })();
-    </script>
   </body>
 </html>
